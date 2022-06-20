@@ -4,6 +4,10 @@ class UsersAPI extends RESTDataSource {
   constructor() {
     super();
     this.baseURL = "http://localhost:3000";
+    this.repostaCustom = {
+      code: 200,
+      mensagem: "Operação realizada com sucesso",
+    }
   }
 
   async getUsers() {
@@ -36,20 +40,23 @@ class UsersAPI extends RESTDataSource {
   }
 
   async atualizaUser(novosDados) {
-    const role = await this.get(`roles?type=${novosDados.role}`);
+    const role = await this.get(`roles?type=${novosDados.user.role}`);
     await this.put(`/users/${novosDados.id}`, {
-      ...novosDados,
+      ...novosDados.user,
       role: role[0].id,
     });
     return {
-      ...novosDados,
-      role: role[0],
+      ...this.repostaCustom,
+      user: {
+        ...novosDados.user,
+        role: role[0],
+      }
     };
   }
 
   async deletaUser(id) {
     await this.delete(`/users/${id}`);
-    return id;
+    return this.repostaCustom;
   }
 }
 

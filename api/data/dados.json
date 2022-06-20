@@ -34,6 +34,30 @@
       "ativo": true,
       "email": "s@s.com",
       "role": 2
+    },
+    {
+      "nome": "Diego Fernandes",
+      "ativo": true,
+      "email": "email@email",
+      "role": 2,
+      "createdAt": "2022-06-20T03:00:00.000Z",
+      "id": 6
+    },
+    {
+      "nome": "Diego Fernandes",
+      "ativo": true,
+      "email": "email@email",
+      "role": 2,
+      "createdAt": "2022-06-20T03:00:00.000Z",
+      "id": 7
+    },
+    {
+      "nome": "Ana Souza",
+      "ativo": true,
+      "email": "souza@email",
+      "role": 2,
+      "createdAt": "2022-06-20T03:00:00.000Z",
+      "id": 8
     }
   ],
   "roles": [
